@@ -63,7 +63,6 @@ STATUS CODE: 200
     {
       "id": 35,
       "name": "clefairy",
-      "type": "fairy",
       "stats": {
         "hp": 90,
         "attack": 60,
@@ -99,7 +98,6 @@ STATUS CODE: 200
   "pokemon": {
     "id": 35,
     "name": "clefairy",
-    "type": "fairy",
     "stats": {
       "hp": 90,
       "attack": 60,
@@ -216,6 +214,6 @@ Desejadas:
 
 
 ## Outras Informações
-Só estão disponíveis os pokémons da primeira geração.
+Só estão disponíveis os pokémons da primeira geração. O projeto é compatível com **Java na versão 11 ou superior**.
 
 Esta é uma REST API desenvolvida durante o curso de Java da **Let's Code**.
