@@ -213,6 +213,10 @@ Desejadas:
 - [ ] Ranking de jogadores
 
 
+## Diagrama de Classes
+![Diagrama de Classes](.github/diagrama-pokebattle.png)
+
+
 ## Outras Informações
 Só estão disponíveis os pokémons da primeira geração. O projeto é compatível com **Java na versão 11 ou superior**.
 
