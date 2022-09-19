@@ -198,6 +198,7 @@ STATUS CODE: 200
 ## Funcionalidades
 Planejadas:
 - [x] Documentação inicial
+- [x] Diagrama de classes
 - [ ] Endpoints relacionados aos usuários
 - [ ] Endpoints relacionados aos pokémons
 - [ ] Endpoints relacionados às batalhas
@@ -205,16 +206,20 @@ Planejadas:
 - [ ] Hospedar o projeto em nuvem
 
 Desejadas:
-- [ ] Imagem de perfil
 - [ ] Histórico de batalhas
 - [ ] Habilidades especiais para cada tipo de pokémon
 - [ ] Recompensas por vencer batalhas
 - [ ] Conquistas para completar
 - [ ] Ranking de jogadores
+- [ ] Imagem de perfil
 
 
 ## Diagrama de Classes
 ![Diagrama de Classes](.github/diagrama-pokebattle.png)
+
+
+## Changelog
+[Veja aqui o histórico de versões do projeto](/CHANGELOG.md)
 
 
 ## Outras Informações
