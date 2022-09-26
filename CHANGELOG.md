@@ -3,6 +3,17 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.3.0] - 2022-09-26
+### Adicionado
+- Services para *Users*, *Pokémons* e *Battles*
+- Getters e Constructors onde necessário nos Dtos, Models e Forms
+
+### Modificado
+- Arquivo TODO.md no .gitignore
+
+### Corrigido
+- Anotações @RestController e @RequestMapping nos Controllers
+
 ## [0.2.1] - 2022-09-26
 ### Modificado
 - Endpoint de criação de times mudado do método **POST** para **PUT**

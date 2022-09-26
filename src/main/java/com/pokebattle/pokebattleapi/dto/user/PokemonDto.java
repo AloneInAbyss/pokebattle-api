@@ -2,6 +2,7 @@ package com.pokebattle.pokebattleapi.dto.user;
 
 import java.util.HashMap;
 
+import com.pokebattle.pokebattleapi.model.Pokemon;
 import com.pokebattle.pokebattleapi.model.enums.StatTypes;
 
 import lombok.Getter;
@@ -9,10 +10,10 @@ import lombok.Getter;
 @Getter
 public class PokemonDto {
 
-    public PokemonDto(String name, Long id, HashMap<StatTypes, Integer> stats) {
-        this.name = name;
-        this.id = id;
-        this.stats = stats;
+    public PokemonDto(Pokemon pokemon) {
+        this.name = pokemon.getName();
+        this.id = pokemon.getId();
+        this.stats = pokemon.getStats();
     }
     
     private String name;
