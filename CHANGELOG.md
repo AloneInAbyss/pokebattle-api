@@ -3,6 +3,15 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.4.0] - 2022-09-26
+### Adicionado
+- Novos modelos: Team e Attributes
+
+### Modificado
+- Lógica do projeto reformulada: a API não fará mais o uso de um token privado para autenticação
+- Diagrama de classes atualizado
+- Todos os Controllers, Services, Repositories, Dtos, Forms e Models foram refatorados
+
 ## [0.3.0] - 2022-09-26
 ### Adicionado
 - Services para *Users*, *Pokémons* e *Battles*

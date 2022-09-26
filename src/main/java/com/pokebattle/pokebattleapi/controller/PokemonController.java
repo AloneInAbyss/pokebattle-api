@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/battle")
-public class BattleController {
-    
-    @GetMapping("/{player1}/{player2}")
-    public ResponseEntity<?> startBattle(@PathVariable String player1, @PathVariable String player2) {
+@RequestMapping("/pokemons")
+public class PokemonController {
+
+    @GetMapping("/{username}")
+    public ResponseEntity<?> drawPokemon(@PathVariable String username) {
         return ResponseEntity.ok().build();
     }
 

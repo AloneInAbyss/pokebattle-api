@@ -5,12 +5,14 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Pokemon {
+public class Attributes {
 
-    private Long id;
+    private Long owner;
+
+    private String hp;
+
+    private String attack;
+
+    private String defense;
     
-    private String name;
-
-    private Attributes attributes;
-
 }
