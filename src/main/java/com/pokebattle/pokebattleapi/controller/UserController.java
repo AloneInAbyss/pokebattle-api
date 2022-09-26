@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pokebattle.pokebattleapi.dto.user.PokemonDto;
@@ -16,7 +17,8 @@ import com.pokebattle.pokebattleapi.form.TeamForm;
 import com.pokebattle.pokebattleapi.form.UserForm;
 
 
-@RestController("/users")
+@RestController
+@RequestMapping("/users")
 public class UserController {
     
     @PostMapping("/register")
