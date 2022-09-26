@@ -223,7 +223,7 @@ Desejadas:
 
 
 ## Diagrama de Classes
-![Diagrama de Classes](.github/diagrama-pokebattle.png)
+![Diagrama de Classes](.github/diagrama-pokebattle.drawio.png)
 
 
 ## Changelog

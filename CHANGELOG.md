@@ -3,6 +3,10 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.4.1] - 2022-09-26
+### Corrigido
+- Link da imagem do diagrama de classes
+
 ## [0.4.0] - 2022-09-26
 ### Adicionado
 - Novos modelos: Team e Attributes
