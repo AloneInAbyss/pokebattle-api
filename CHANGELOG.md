@@ -3,6 +3,10 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.2.1] - 2022-09-26
+### Modificado
+- Endpoint de criação de times mudado do método **POST** para **PUT**
+
 ## [0.2.0] - 2022-09-26
 ### Adicionado
 - Controllers para *Users* e *Battles*

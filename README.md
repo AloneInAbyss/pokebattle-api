@@ -107,7 +107,7 @@ STATUS CODE: 200
 }
 ```
 
-### **POST** `/users/<TOKEN PRIVADO>/team`
+### **PUT** `/users/<TOKEN PRIVADO>/team`
 Define qual time de pokémons será usado em batalhas com seu usuário. Um time deve ter obrigatóriamente **três pokémons**.
 
 #### Campos da requisição
