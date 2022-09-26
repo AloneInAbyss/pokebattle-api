@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 import com.pokebattle.pokebattleapi.model.enums.StatTypes;
 
+import lombok.Getter;
+
+@Getter
 public class Pokemon {
 
     public Pokemon(String name, Long id, HashMap<StatTypes, Integer> stats) {

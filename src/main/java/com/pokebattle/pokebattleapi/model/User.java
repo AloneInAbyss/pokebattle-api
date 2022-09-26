@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.pokebattle.pokebattleapi.model.enums.TeamSlots;
 
+import lombok.Getter;
+
+@Getter
 public class User {
 
     public User(String username) {
