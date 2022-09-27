@@ -5,16 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "teams")
 public class Team {
@@ -24,17 +23,14 @@ public class Team {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @MapsId
     @NotNull
     private Pokemon slotOne;
     
     @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @MapsId
     @NotNull
     private Pokemon slotTwo;
     
     @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @MapsId
     @NotNull
     private Pokemon slotThree;
 

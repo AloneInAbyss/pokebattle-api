@@ -8,20 +8,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "pokemons")
 public class Pokemon {
+
+    public Pokemon(String name, Attributes attributes) {
+        this.name = name;
+        this.attributes = attributes;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,11 +35,9 @@ public class Pokemon {
     private String name;
     
     @ManyToMany(mappedBy = "pokemons")
-    @NotNull
     private List<User> users;
     
     @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @MapsId
     @NotNull
     private Attributes attributes;
 

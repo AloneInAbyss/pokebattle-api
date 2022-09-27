@@ -9,14 +9,20 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "attributes")
 public class Attributes {
+
+    public Attributes(int hp, int attack, int defense) {
+        this.hp = hp;
+        this.attack = attack;
+        this.defense = defense;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
