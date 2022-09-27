@@ -11,6 +11,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,13 +27,16 @@ public class Pokemon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String name;
-
+    
     @ManyToMany(mappedBy = "pokemons")
+    @NotNull
     private List<User> users;
-
-    @OneToOne(cascade = CascadeType.ALL)
+    
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
     @MapsId
+    @NotNull
     private Attributes attributes;
 
 }
