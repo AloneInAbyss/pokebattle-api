@@ -3,6 +3,13 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.5.2] - 2022-09-26
+### Adicionado
+- Campos com @JsonIgnore
+
+### Removido
+- Relacionamento @ManyToMany desnecessário nas entidades
+
 ## [0.5.1] - 2022-09-26
 ### Adicionado
 - Validações nos atributos das entidades
