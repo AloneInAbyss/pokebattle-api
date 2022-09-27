@@ -3,6 +3,13 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.6.0] - 2022-09-26
+A funcionalidade para pegar os pokémons da PokéAPI ainda precisa ser implementada.
+
+### Adicionado
+- Service para User e Pokemon
+- Endpoint para criação de conta
+
 ## [0.5.2] - 2022-09-26
 ### Adicionado
 - Campos com @JsonIgnore
