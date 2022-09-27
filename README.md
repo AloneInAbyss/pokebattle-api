@@ -210,7 +210,7 @@ Planejadas:
 - [ ] Endpoints relacionados aos usuários
 - [ ] Endpoints relacionados aos pokémons
 - [ ] Endpoints relacionados às batalhas
-- [ ] Disponibilizar template para usar no Insomnia
+- [x] Disponibilizar template para usar no Insomnia
 - [ ] Hospedar o projeto em nuvem
 
 Desejadas:
