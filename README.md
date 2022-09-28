@@ -17,14 +17,14 @@ Para visualizar o perfil público de alguém, use `/users/<NOME DE USUÁRIO>`, o
 - [Criação de usuário](#post-usersregister)
 - [Ver perfil de usuário](#get-usersnome-de-usuário)
 - [Obter novo pokémon](#get-pokemonsnome-de-usuário)
-- [Criar novo time de pokémons](#put-usersnome-de-usuárioteam)
+- [Alterar time de pokémons](#put-usersnome-de-usuárioteam)
 - [Batalhar contra um usuário](#get-battlenome-de-usuárionome-de-usuário)
 
 ### **POST** `/users/register`
 Cria um novo usuário.
 
 #### Campos da requisição
-- Nome de usuário: `"username": "<nome>"` onde *nome* é formado apenas por letras e acentos.
+- Nome de usuário: `"username": "<nome>"` onde *nome* é formado apenas por letras minúsculas, sem acentos ou espaços, e com tamanho máximo de 20 caracteres.
 
 #### Exemplos
 ```
