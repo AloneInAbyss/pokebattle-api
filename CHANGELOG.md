@@ -3,6 +3,10 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.7.0] - 2022-09-28
+### Adicionado
+- Registro automático dos pokémons no banco de dados a partir dos arquivos com os dados
+
 ## [0.6.1] - 2022-09-26
 ### Adicionado
 - Template do **Insomnia** para testes da API
