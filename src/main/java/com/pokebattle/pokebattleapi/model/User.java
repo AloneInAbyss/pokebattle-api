@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @NoArgsConstructor
@@ -59,6 +60,7 @@ public class User {
     private List<Pokemon> pokemons;
     
     @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @Setter
     private Team team;
 
 }

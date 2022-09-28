@@ -1,11 +1,9 @@
 package com.pokebattle.pokebattleapi.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -20,21 +18,24 @@ import lombok.NoArgsConstructor;
 @Table(name = "teams")
 public class Team {
 
+    public Team(Long slotOneId, Long slotTwoId, Long slotThreeId) {
+        this.slotOneId = slotOneId;
+        this.slotTwoId = slotTwoId;
+        this.slotThreeId = slotThreeId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
     @NotNull
-    private Pokemon slotOne;
+    private Long slotOneId;
     
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
     @NotNull
-    private Pokemon slotTwo;
+    private Long slotTwoId;
     
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
     @NotNull
-    private Pokemon slotThree;
+    private Long slotThreeId;
 
 }

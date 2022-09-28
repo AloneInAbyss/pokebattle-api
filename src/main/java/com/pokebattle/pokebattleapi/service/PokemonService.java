@@ -13,42 +13,60 @@ import com.pokebattle.pokebattleapi.repository.PokemonRepository;
 @Service
 public class PokemonService {
 
-  @Autowired
-  private PokemonRepository pokemonRepository;
+    @Autowired
+    private PokemonRepository pokemonRepository;
 
-  public Pokemon drawNewPokemonForUser(User user) {
-    if (user.getPokemons().size() >= 151) {
-      throw new RuntimeException();
+    public Pokemon drawNewPokemonForUser(User user) {
+        if (user.getPokemons().size() >= 151) {
+            throw new RuntimeException();
+        }
+
+        Pokemon pokemon;
+
+        long number;
+        do {
+            Pokemon randomizedPokemon = drawRandomPokemon();
+            pokemon = randomizedPokemon;
+
+            number = user.getPokemons()
+                .stream()
+                .filter(p -> p.getName().equals(randomizedPokemon.getName()))
+                .count();
+
+        } while (number != 0);
+
+        return pokemon;
     }
 
-    Pokemon pokemon;
+    public Pokemon getPokemonByNameOrId(String identifier) {
+        Optional<Pokemon> pokemon;
 
-    long number;
-    do {
-      Pokemon randomizedPokemon = drawRandomPokemon();
-      pokemon = randomizedPokemon;
+        try {
+            Long pokemonId = Long.parseLong(identifier);
+            pokemon = pokemonRepository.findById(pokemonId);
+        } catch (NumberFormatException e) {
+            String pokemonName = identifier;
+            pokemon = pokemonRepository.findByName(pokemonName);
+        }
 
-      number = user.getPokemons()
-        .stream()
-        .filter(p -> p.getName().equals(randomizedPokemon.getName()))
-        .count();
-      
-    } while (number != 0);
-    
-    return pokemon;
-  }
+        if (pokemon.isEmpty()) {
+            throw new RuntimeException();
+        }
 
-  private Pokemon drawRandomPokemon() {
-    Random rand = new Random();
-    long n = rand.nextInt(151);
-    n += 1;
-
-    Optional<Pokemon> pokemon = pokemonRepository.findById(n);
-    if (pokemon.isEmpty()) {
-      throw new RuntimeException();
+        return pokemon.get();
     }
 
-    return pokemon.get();
-  }
+    private Pokemon drawRandomPokemon() {
+        Random rand = new Random();
+        long n = rand.nextInt(151);
+        n += 1;
+
+        Optional<Pokemon> pokemon = pokemonRepository.findById(n);
+        if (pokemon.isEmpty()) {
+            throw new RuntimeException();
+        }
+
+        return pokemon.get();
+    }
 
 }
