@@ -1,5 +1,7 @@
 package com.pokebattle.pokebattleapi.controller;
 
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.pokebattle.pokebattleapi.dto.TeamDto;
 import com.pokebattle.pokebattleapi.dto.UserDto;
@@ -26,12 +29,14 @@ public class UserController {
     private UserService userService;
     
     @PostMapping("/register")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserForm userForm) {
+    public ResponseEntity<UserDto> createUser(@RequestBody UserForm userForm, UriComponentsBuilder uriBuilder) {
         User user = userService.createUser(userForm.getUsername());
 
         UserDto userDto = new UserDto(user);
 
-        return ResponseEntity.ok(userDto);
+        URI uri = uriBuilder.path("/users/{username}").buildAndExpand(user.getUsername()).toUri();
+
+        return ResponseEntity.created(uri).body(userDto);
     }
 
     @GetMapping("/{username}")
