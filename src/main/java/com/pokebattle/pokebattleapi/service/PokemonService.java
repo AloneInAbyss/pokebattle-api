@@ -7,6 +7,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pokebattle.pokebattleapi.exceptions.pokebattle.PokebattleException;
+import com.pokebattle.pokebattleapi.exceptions.pokebattle.PokebattleExceptionCodes;
 import com.pokebattle.pokebattleapi.model.Pokemon;
 import com.pokebattle.pokebattleapi.model.User;
 import com.pokebattle.pokebattleapi.repository.PokemonRepository;
@@ -19,12 +21,12 @@ public class PokemonService {
 
     public Pokemon drawNewPokemonForUser(User user) {
         if (user.getPokemons().size() >= 151) {
-            throw new RuntimeException();
+            throw new PokebattleException(PokebattleExceptionCodes.REACHED_MAX_POKEMONS);
         }
 
         boolean isAvailable = user.getLastDraw().plusMinutes(2).isBefore(LocalDateTime.now());
         if (user.getPokemons().size() >= 5 && !isAvailable) {
-            throw new RuntimeException();
+            throw new PokebattleException(PokebattleExceptionCodes.UNAVAIBLE_FOR_PULL);
         }
 
         Pokemon pokemon;
@@ -69,7 +71,7 @@ public class PokemonService {
 
         Optional<Pokemon> pokemon = pokemonRepository.findById(n);
         if (pokemon.isEmpty()) {
-            throw new RuntimeException();
+            throw new RuntimeException("An unknown error occured");
         }
 
         return pokemon.get();
