@@ -8,9 +8,9 @@ Veja abaixo uma simples explicação dos principais endpoints, e na próxima se�
 
 A funcionalidade da API é simples: um usuário pode se registrar através do endpoint `/users/register`. Seu nome de usuário pode ser usado para obter novos pokémons, ou para outras pessoas interagirem com seu perfil e batalharem contra você.
 
-Para obter um pokémon use `/pokemons/<NOME DE USUÁRIO>`, e para visualizá-los use `/users/<NOME DE USUÁRIO>`. **Você só pode obter um pokémon a cada 2 minutos**. Cada conta ganha 5 pokémons aleatórios quando é criada. Um time poderá ser formado usando três pokémons diferentes, através do endpoint `/users/<NOME DE USUÁRIO>/team`. 
+Para obter um pokémon use `/pokemons/<NOME DE USUÁRIO>`, e para visualizá-los use `/users/<NOME DE USUÁRIO>`. **Você só pode obter um pokémon a cada 2 minutos**. Cada conta ganha *5 pokémons* aleatórios quando é criada. Um time poderá ser formado usando três pokémons diferentes, através do endpoint `/users/<NOME DE USUÁRIO>/team`. 
 
-Para visualizar o perfil público de alguém, use `/users/<NOME DE USUÁRIO>`, onde poderá ver seu time e sua lista de pokémons. Para iniciar uma batalha entre dois jogadores, use `/battle/<NOME DE USUÁRIO>/<NOME DO OUTRO USUÁRIO>`.
+Para visualizar o perfil público de alguém, use `/users/<NOME DE USUÁRIO>`, onde poderá ver seu time atual e sua lista de pokémons. Para iniciar uma batalha entre dois jogadores, use `/battle/<NOME DE USUÁRIO>/<NOME DO OUTRO USUÁRIO>`.
 
 ## Lista de Endpoints
 
@@ -24,7 +24,7 @@ Para visualizar o perfil público de alguém, use `/users/<NOME DE USUÁRIO>`, o
 Cria um novo usuário.
 
 #### Campos da requisição
-- Nome de usuário: `"username": "<nome>"` onde *nome* é formado apenas por letras minúsculas, sem acentos ou espaços, e com tamanho máximo de 20 caracteres.
+- Nome de usuário: `"username": "<nome>"` onde *nome* é formado apenas por **letras minúsculas**, sem acentos ou espaços, e com tamanho máximo de **20 caracteres**.
 
 #### Exemplos
 ```
@@ -43,16 +43,17 @@ STATUS CODE: 201
   "username": "aloneinabyss",
   "pokemons": [
     {
-      "id": "35",
-      "name": "clefairy",
+      "id": 54,
+      "name": "psyduck",
       "attributes": {
-        "hp": "90",
-        "attack": "60",
-        "defense": "100"
+        "hp": 50,
+        "attack": 52,
+        "defense": 48
       }
-    }
+    },
     ...
   ]
+}
 ```
 
 ### **GET** `/users/<NOME DE USUÁRIO>`
@@ -71,29 +72,38 @@ STATUS CODE: 200
   "username": "aloneinabyss",
   "pokemons": [
     {
-      "id": "35",
-      "name": "clefairy",
+      "id": 54,
+      "name": "psyduck",
       "attributes": {
-        "hp": "90",
-        "attack": "60",
-        "defense": "100"
+        "hp": 50,
+        "attack": 52,
+        "defense": 48
       }
     },
     ...
   ],
-  "team": [
-    {
-      "id": "35",
-      "name": "clefairy"
+  "team": {
+    "slotOne": {
+      "id": 112,
+      "name": "rhydon",
+      "attributes": {
+        "hp": 105,
+        "attack": 130,
+        "defense": 120
+      }
+    },
+    "slotTwo": {
       ...
     },
-    ...
-  ]
+    "slotThree": {
+      ...
+    }
+  }
 }
 ```
 
 ### **GET** `/pokemons/<NOME DE USUÁRIO>`
-Usado para obter um novo pokémon aleatório. Só pode ser chamado a cada 2 minutos por cada usuário.
+Usado para obter um novo pokémon aleatório. Só pode ser chamado a cada **2 minutos** por cada usuário.
 
 #### Exemplos
 ```
@@ -105,14 +115,12 @@ GET <URL>/pokemons/aloneinabyss
 STATUS CODE: 200
 
 {
-  "pokemon": {
-    "id": "35",
-    "name": "clefairy",
-    "attributes": {
-      "hp": "90",
-      "attack": "60",
-      "defense": "100"
-    }
+  "id": 116,
+  "name": "horsea",
+  "attributes": {
+    "hp": 30,
+    "attack": 40,
+    "defense": 70
   }
 }
 ```
@@ -121,16 +129,16 @@ STATUS CODE: 200
 Define qual time de pokémons será usado em batalhas com seu usuário. Um time deve ter obrigatóriamente **três pokémons**.
 
 #### Campos da requisição
-- Time: `"team": { "first": "<id | nome>", "second": "<id | nome>", "third": "<id | nome>" }` onde é possível passar o id ou o nome do pokémon desejado para cada posição do time. Só serão aceitos pokémons que o usuário possuir em sua conta.
+- Time: `"team": { "first": "<id | nome>", "second": "<id | nome>", "third": "<id | nome>" }` onde é possível passar o id ou o nome do pokémon desejado para cada posição do time. Só serão aceitos pokémons que o usuário possuir em sua conta. Não é possível usar o mesmo pokémon em mais de um slot.
 
 #### Exemplos
 ```
 PUT <URL>/users/aloneinabyss/team
 
 {
-  "first": "clefairy",
-  "second": "19",
-  "third": "130"
+  "first": "rhydon",
+  "second": "nidorina",
+  "third": "116"
 }
 ```
 
@@ -139,14 +147,21 @@ PUT <URL>/users/aloneinabyss/team
 STATUS CODE: 201
 
 {
-  "team": [
-    {
-      "id": "35",
-      "name: "clefairy"
-      ...
-    },
+  "slotOne": {
+    "id": 112,
+    "name": "rhydon",
+    "attributes": {
+      "hp": 105,
+      "attack": 130,
+      "defense": 120
+    }
+  },
+  "slotTwo": {
     ...
-  ]
+  },
+  "slotThree": {
+    ...
+  }
 }
 ```
 
@@ -207,18 +222,21 @@ STATUS CODE: 200
 Planejadas:
 - [x] Documentação inicial
 - [x] Diagrama de classes
-- [ ] Endpoints relacionados aos usuários
-- [ ] Endpoints relacionados aos pokémons
+- [x] Template para usar no Insomnia
+- [x] Endpoints relacionados aos usuários
+- [x] Endpoints relacionados aos pokémons
 - [ ] Endpoints relacionados às batalhas
-- [x] Disponibilizar template para usar no Insomnia
+- [ ] Interface do Swagger
 - [ ] Hospedar o projeto em nuvem
 
 Desejadas:
-- [ ] Histórico de batalhas
-- [ ] Habilidades especiais para cada tipo de pokémon
-- [ ] Recompensas por vencer batalhas
+- [ ] Interface gráfica
 - [ ] Conquistas para completar
+- [ ] Histórico de batalhas
+- [ ] Recompensas por vencer batalhas
 - [ ] Ranking de jogadores
+- [ ] Habilidades especiais para cada tipo de pokémon
+- [ ] Imagem dos pokémons
 - [ ] Imagem de perfil
 
 
