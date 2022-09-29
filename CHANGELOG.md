@@ -3,6 +3,14 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.11.0] - 2022-09-28
+### Adicionado
+- Endpoint para obter um novo pokémon
+
+### Modificado
+- Tempo para obter um pokémon reduzido de 5 para 2 minutos
+- Diagrama de classes atualizado
+
 ## [0.10.2] - 2022-09-28
 ### Modificado
 - Removido retorno do campo team caso seu valor seja nulo

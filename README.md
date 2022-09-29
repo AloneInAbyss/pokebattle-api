@@ -8,7 +8,7 @@ Veja abaixo uma simples explicação dos principais endpoints, e na próxima se�
 
 A funcionalidade da API é simples: um usuário pode se registrar através do endpoint `/users/register`. Seu nome de usuário pode ser usado para obter novos pokémons, ou para outras pessoas interagirem com seu perfil e batalharem contra você.
 
-Para obter um pokémon use `/pokemons/<NOME DE USUÁRIO>`, e para visualizá-los use `/users/<NOME DE USUÁRIO>`. **Você só pode obter um pokémon a cada 5 minutos**. Cada conta ganha 5 pokémons aleatórios quando é criada. Um time poderá ser formado usando três pokémons diferentes, através do endpoint `/users/<NOME DE USUÁRIO>/team`. 
+Para obter um pokémon use `/pokemons/<NOME DE USUÁRIO>`, e para visualizá-los use `/users/<NOME DE USUÁRIO>`. **Você só pode obter um pokémon a cada 2 minutos**. Cada conta ganha 5 pokémons aleatórios quando é criada. Um time poderá ser formado usando três pokémons diferentes, através do endpoint `/users/<NOME DE USUÁRIO>/team`. 
 
 Para visualizar o perfil público de alguém, use `/users/<NOME DE USUÁRIO>`, onde poderá ver seu time e sua lista de pokémons. Para iniciar uma batalha entre dois jogadores, use `/battle/<NOME DE USUÁRIO>/<NOME DO OUTRO USUÁRIO>`.
 
@@ -93,7 +93,7 @@ STATUS CODE: 200
 ```
 
 ### **GET** `/pokemons/<NOME DE USUÁRIO>`
-Usado para obter um novo pokémon aleatório. Só pode ser chamado a cada 5 minutos por cada usuário.
+Usado para obter um novo pokémon aleatório. Só pode ser chamado a cada 2 minutos por cada usuário.
 
 #### Exemplos
 ```

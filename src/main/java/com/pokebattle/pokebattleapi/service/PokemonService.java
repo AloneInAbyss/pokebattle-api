@@ -1,5 +1,6 @@
 package com.pokebattle.pokebattleapi.service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -18,6 +19,11 @@ public class PokemonService {
 
     public Pokemon drawNewPokemonForUser(User user) {
         if (user.getPokemons().size() >= 151) {
+            throw new RuntimeException();
+        }
+
+        boolean isAvailable = user.getLastDraw().plusMinutes(2).isBefore(LocalDateTime.now());
+        if (user.getPokemons().size() >= 5 && !isAvailable) {
             throw new RuntimeException();
         }
 

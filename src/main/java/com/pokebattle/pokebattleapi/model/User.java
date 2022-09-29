@@ -35,6 +35,7 @@ public class User {
     public User(String username, List<Pokemon> pokemons) {
         this.username = username;
         this.pokemons = pokemons;
+        this.lastDraw = LocalDateTime.now();
     }
 
     @Id
@@ -49,6 +50,7 @@ public class User {
     
     @Column(name = "last_draw")
     @PastOrPresent
+    @Setter
     private LocalDateTime lastDraw;
     
     @ManyToMany
