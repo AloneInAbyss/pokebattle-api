@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pokebattle.pokebattleapi.exceptions.pokebattle.PokebattleException;
+import com.pokebattle.pokebattleapi.exceptions.pokebattle.PokebattleExceptionCodes;
 import com.pokebattle.pokebattleapi.form.TeamForm;
 import com.pokebattle.pokebattleapi.model.Pokemon;
 import com.pokebattle.pokebattleapi.model.Team;
@@ -29,6 +31,10 @@ public class UserService {
     private PokemonService pokemonService;
 
     public User createUser(String username) {
+
+        if (checkIfUserExists(username)) {
+            throw new PokebattleException(PokebattleExceptionCodes.USER_ALREADY_EXISTS);
+        }
 
         List<Pokemon> pokemons = new ArrayList<>();
 
@@ -95,6 +101,12 @@ public class UserService {
         if (owned != 1) {
             throw new RuntimeException();
         }
+    }
+
+    private boolean checkIfUserExists(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+
+        return user.isPresent();
     }
 
 }

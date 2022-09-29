@@ -44,8 +44,9 @@ public class User {
     private long id;
 
     @Column(unique = true)
-    @Pattern(regexp="^[a-z]*$")
-    @NotBlank @Size(min = 1, max = 20)
+    @Pattern(regexp="^[a-z]*$", message = "Must contain only lowercase letters and no special symbols")
+    @NotBlank(message = "Must not be blank")
+    @Size(min = 1, max = 20, message = "Must be 1-20 characters long")
     private String username;
     
     @Column(name = "last_draw")
