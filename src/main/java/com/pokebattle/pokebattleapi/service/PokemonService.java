@@ -58,7 +58,7 @@ public class PokemonService {
         }
 
         if (pokemon.isEmpty()) {
-            throw new RuntimeException();
+            throw new PokebattleException(PokebattleExceptionCodes.POKEMON_NOT_FOUND);
         }
 
         return pokemon.get();
