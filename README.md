@@ -225,7 +225,7 @@ Planejadas:
 - [x] Template para usar no Insomnia
 - [x] Endpoints relacionados aos usuários
 - [x] Endpoints relacionados aos pokémons
-- [ ] Endpoints relacionados às batalhas
+- [x] Endpoints relacionados às batalhas
 - [ ] Interface do Swagger
 - [ ] Hospedar o projeto em nuvem
 
