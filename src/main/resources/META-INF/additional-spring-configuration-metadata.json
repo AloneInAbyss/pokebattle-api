@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "project.version",
+  "type": "java.lang.String",
+  "description": "Project version according to Maven data"
+}]}

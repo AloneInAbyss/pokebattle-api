@@ -17,12 +17,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import io.swagger.v3.oas.annotations.Hidden;
+
 @RestControllerAdvice
 public class ValidationExceptionHandler {
 
     @Autowired
     private MessageSource messageSource;
 
+    @Hidden
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<ValidationExceptionDto> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
@@ -40,6 +43,7 @@ public class ValidationExceptionHandler {
         return exceptionDtoList;
     }
 
+    @Hidden
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
     protected List<ValidationExceptionDto> handleConstraintViolationException(ConstraintViolationException ex) {
