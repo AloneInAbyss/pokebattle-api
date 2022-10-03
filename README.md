@@ -219,7 +219,7 @@ Planejadas:
 - [x] Endpoints relacionados aos pokémons
 - [x] Endpoints relacionados às batalhas
 - [x] Interface do Swagger
-- [ ] Hospedar o projeto em nuvem
+- [x] Hospedar o projeto em nuvem
 
 Desejadas:
 - [ ] Interface gráfica
