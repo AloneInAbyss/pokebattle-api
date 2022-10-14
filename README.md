@@ -1,8 +1,6 @@
 # PokéBattle API
 O projeto consiste em batalhas entre times de *Pokémons*, onde cada usuário pode criar um time e batalhar contra outros jogadores. Cada usuário precisa obter seus próprios pokémons, através de um endpoint cuja interação é limitada por tempo. 
 
-Hospedado em: [http://52.67.85.113/](http://52.67.85.113/)
-
 > Os dados dos *Pokémons* foram obtidos pela [PokéAPI](https://pokeapi.co).
 
 ## Como funciona?
