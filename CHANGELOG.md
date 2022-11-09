@@ -3,6 +3,11 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.12.1] - 2022-09-29
+### Adicionado
+- Redirecionamento no endpoint de criação de usuário para a página de exibição do usuário
+- Testes para endpoint de criação de usuário
+
 ## [0.12.0] - 2022-09-29
 ### Adicionado
 - Validações e mensagens de erro no endpoint de criação do usuário
