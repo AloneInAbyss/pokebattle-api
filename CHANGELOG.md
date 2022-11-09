@@ -3,6 +3,12 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.12.5] - 2022-09-29
+### Modificado
+- Readme atualizado
+- Diagrama de classes atualizado
+- Template do Insomnia atualizado
+
 ## [0.12.4] - 2022-09-29
 ### Adicionado
 - Mensagens de erro no endpoint de trocar o time
