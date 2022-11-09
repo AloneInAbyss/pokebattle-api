@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,10 +19,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "teams")
 public class Team {
 
-    public Team(Long slotOneId, Long slotTwoId, Long slotThreeId) {
-        this.slotOneId = slotOneId;
-        this.slotTwoId = slotTwoId;
-        this.slotThreeId = slotThreeId;
+    public Team(Pokemon slotOne, Pokemon slotTwo, Pokemon slotThree) {
+        this.slotOne = slotOne;
+        this.slotTwo = slotTwo;
+        this.slotThree = slotThree;
     }
 
     @Id
@@ -29,13 +30,16 @@ public class Team {
     @JsonIgnore
     private Long id;
 
+    @ManyToOne
     @NotNull
-    private Long slotOneId;
+    private Pokemon slotOne;
     
+    @ManyToOne
     @NotNull
-    private Long slotTwoId;
+    private Pokemon slotTwo;
     
+    @ManyToOne
     @NotNull
-    private Long slotThreeId;
+    private Pokemon slotThree;
 
 }

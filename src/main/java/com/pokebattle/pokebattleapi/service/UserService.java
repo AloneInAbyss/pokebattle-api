@@ -66,7 +66,7 @@ public class UserService {
         }).collect(Collectors.toList());
         
         // Team oldTeam = user.getTeam();
-        Team newTeam = new Team(pokemons.get(0).getId(), pokemons.get(1).getId(), pokemons.get(2).getId());
+        Team newTeam = new Team(pokemons.get(0), pokemons.get(1), pokemons.get(2));
         
         user.setTeam(newTeam);
         
