@@ -3,6 +3,10 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.8.1] - 2022-09-28
+### Modificado
+- Template do Insomnia atualizado
+
 ## [0.8.0] - 2022-09-28
 ### Adicionado
 - Validação do nome do usuário
