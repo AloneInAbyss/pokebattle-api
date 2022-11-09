@@ -25,8 +25,8 @@ public class UserService {
 
     User user = new User(username, pokemons);
 
-    for (int i = 1; i <= 3; i++) {
-      Pokemon pokemon = pokemonService.drawNonRepeatedPokemonFromPool(user);
+    for (int i = 1; i <= 5; i++) {
+      Pokemon pokemon = pokemonService.drawNewPokemonForUser(user);
       pokemons.add(pokemon);
     }
     
