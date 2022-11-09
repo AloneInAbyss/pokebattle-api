@@ -3,6 +3,11 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.14.0] - 2022-09-30
+### Adicionado
+- Documentação com Swagger / OpenAPI
+- Versionamento no Maven
+
 ## [0.13.0] - 2022-09-30
 ### Adicionado
 - Endpoint de batalhas entre times dos usuários
