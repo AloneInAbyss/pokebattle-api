@@ -1,5 +1,6 @@
 package com.pokebattle.pokebattleapi.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -65,16 +66,24 @@ public class UserService {
             return slot;
         }).collect(Collectors.toList());
         
-        // Team oldTeam = user.getTeam();
         Team newTeam = new Team(pokemons.get(0), pokemons.get(1), pokemons.get(2));
         
         user.setTeam(newTeam);
         
         teamRepository.save(newTeam);
         userRepository.save(user);
-        // teamRepository.delete(oldTeam);
 
         return newTeam;
+    }
+
+    public void addPokemonToUser(User user, Pokemon pokemon) {
+        List<Pokemon> pokemons = user.getPokemons();
+
+        pokemons.add(pokemon);
+
+        user.setLastDraw(LocalDateTime.now());
+
+        userRepository.save(user);
     }
 
     private void checkIfPokemonIsOwnedByUser(User user, Pokemon pokemon) {
