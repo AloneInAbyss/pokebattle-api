@@ -2,6 +2,7 @@ package com.pokebattle.pokebattleapi.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,16 @@ public class UserService {
 
     return user;
 
+  }
+
+  public User getUserInfo(String username) {
+    Optional<User> user = userRepository.findByUsername(username);
+
+    if (user.isEmpty()) {
+      throw new RuntimeException();
+    }
+    
+    return user.get();
   }
 
 }

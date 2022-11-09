@@ -32,8 +32,12 @@ public class UserController {
     }
 
     @GetMapping("/{username}")
-    public ResponseEntity<?> getUserInfo(@PathVariable String username) {
-        return ResponseEntity.ok().build();
+    public ResponseEntity<UserDto> getUserInfo(@PathVariable String username) {
+        User user = userService.getUserInfo(username);
+
+        UserDto userDto = new UserDto(user);
+
+        return ResponseEntity.ok(userDto);
     }
 
     @PutMapping("/{username}/team")

@@ -3,6 +3,13 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.9.0] - 2022-09-28
+### Adicionado
+- Endpoint e lógica para ver o perfil de um usuário
+
+### Modificado
+- Atualizado diagrama de classes
+
 ## [0.8.1] - 2022-09-28
 ### Modificado
 - Template do Insomnia atualizado
