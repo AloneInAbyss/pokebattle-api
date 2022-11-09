@@ -65,10 +65,19 @@ public class UserService {
         User user = this.getUserInfo(username);
 
         List<String> pokemonsIdentifiers = List.of(teamForm.getFirst(), teamForm.getSecond(), teamForm.getThird());
+        List<Long> uniquePokemons = new ArrayList<>();
 
         List<Pokemon> pokemons = pokemonsIdentifiers.stream().map(p -> {
             Pokemon slot = pokemonService.getPokemonByNameOrId(p);
             checkIfPokemonIsOwnedByUser(user, slot);
+
+            uniquePokemons.forEach(id -> {
+                if (slot.getId().equals(id)) {
+                    throw new PokebattleException(PokebattleExceptionCodes.TEAM_REPEATED_POKEMON);
+                }
+            });
+            uniquePokemons.add(slot.getId());
+
             return slot;
         }).collect(Collectors.toList());
         
@@ -99,7 +108,7 @@ public class UserService {
             .count();
         
         if (owned != 1) {
-            throw new RuntimeException();
+            throw new PokebattleException(PokebattleExceptionCodes.USER_UNOWNED_POKEMON);
         }
     }
 
