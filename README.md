@@ -178,42 +178,32 @@ GET <URL>/battle/aloneinabyss/devilady
 STATUS CODE: 200
 
 {
-  "battle": {
-    "round1": {
-      "winner": "aloneinabyss",
-      "criteria": "hp",
-      "player1": {
-        "pokemon": {
-          "name": "clefairy",
-          ...
+  "winner": "playerTwo",
+  "battle": [
+    {
+      "winner": "playerTwo",
+      "criteria": "DEFENSE",
+      "playerOne": {
+        "id": 106,
+        "name": "hitmonlee",
+        "attributes": {
+          "hp": 50,
+          "attack": 120,
+          "defense": 53
         }
       },
-      "player2": {
-        "pokemon": {
-          "name": "rattata",
-          ...
-        }
-      }
-    },
-    "round2": {
-      "winner": "devilady",
-      "criteria": "attack",
-      "player1": {
-        "pokemon": {
-          "name": "bulbasaur",
-          ...
-        }
-      },
-      "player2": {
-        "pokemon": {
-          "name": "pikachu",
-          ...
+      "playerTwo": {
+        "id": 117,
+        "name": "seadra",
+        "attributes": {
+          "hp": 55,
+          "attack": 65,
+          "defense": 95
         }
       }
     },
     ...
-  },
-  "winner": "aloneinabyss"
+  ]
 }
 ```
 
@@ -226,7 +216,7 @@ Planejadas:
 - [x] Endpoints relacionados aos usuários
 - [x] Endpoints relacionados aos pokémons
 - [x] Endpoints relacionados às batalhas
-- [ ] Interface do Swagger
+- [x] Interface do Swagger
 - [ ] Hospedar o projeto em nuvem
 
 Desejadas:

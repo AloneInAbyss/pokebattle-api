@@ -27,7 +27,7 @@ public class BattleController {
     @Autowired
     private BattleService battleService;
 
-    @Operation(summary = "Battle against other user")
+    @Operation(summary = "Battle against another user")
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "Battle completed successfully", 
           content = { @Content(mediaType = "application/json", 
