@@ -55,7 +55,7 @@ public class UserService {
         Optional<User> user = userRepository.findByUsername(username);
 
         if (user.isEmpty()) {
-            throw new RuntimeException();
+            throw new PokebattleException(PokebattleExceptionCodes.USER_NOT_FOUND);
         }
 
         return user.get();
