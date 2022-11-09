@@ -13,7 +13,8 @@ public enum PokebattleExceptionCodes {
     UNAVAIBLE_FOR_PULL(203, "You can only get a pokémon once every 2 minutes", HttpStatus.CONFLICT),
     POKEMON_NOT_FOUND(204, "Pokémon not found, verify its name or id", HttpStatus.NOT_FOUND),
     TEAM_REPEATED_POKEMON(301, "You can't have the same pokémon on two or more slots", HttpStatus.CONFLICT),
-    USER_UNOWNED_POKEMON(302, "User doesn't have one or more of the requested pokémons", HttpStatus.CONFLICT);
+    USER_UNOWNED_POKEMON(302, "User doesn't have one or more of the requested pokémons", HttpStatus.CONFLICT),
+    NO_TEAM_DEFINED(303, "User doesn't have a valid pokémon team", HttpStatus.CONFLICT);
 
     private Integer code;
     private String message;

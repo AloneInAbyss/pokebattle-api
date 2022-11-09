@@ -3,6 +3,10 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.13.0] - 2022-09-30
+### Adicionado
+- Endpoint de batalhas entre times dos usuários
+
 ## [0.12.5] - 2022-09-29
 ### Modificado
 - Readme atualizado
