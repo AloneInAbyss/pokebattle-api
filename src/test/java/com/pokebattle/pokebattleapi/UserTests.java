@@ -44,7 +44,6 @@ public class UserTests {
                     .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.username").value(username))
                     .andExpect(jsonPath("$.pokemons").isArray());
-        
     }
     
     @Test
@@ -58,6 +57,5 @@ public class UserTests {
                     .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.username").value(username))
                     .andExpect(jsonPath("$.pokemons").isArray());
-        
     }
 }

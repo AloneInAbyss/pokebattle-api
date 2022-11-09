@@ -3,6 +3,13 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [0.12.3] - 2022-09-29
+### Adicionado
+- Mensagens de erro no endpoint de obter novos pokémons
+
+### Removido
+- Logs que não sejam de ERROR não aparecem mais em produção
+
 ## [0.12.2] - 2022-09-29
 ### Adicionado
 - Alteração na classe de Exceptions
