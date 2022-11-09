@@ -3,7 +3,11 @@ Todas as alterações notáveis em cada nova versão do projeto serão documenta
 
 > Inspirado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## [0.11.0] - 2022-09-28
+## [0.12.0] - 2022-09-29
+### Adicionado
+- Validações e mensagens de erro no endpoint de criação do usuário
+
+## [0.11.0] - 2022-09-29
 ### Adicionado
 - Endpoint para obter um novo pokémon
 
