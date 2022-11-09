@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -41,6 +42,7 @@ public class User {
     private long id;
 
     @Column(unique = true)
+    @Pattern(regexp="^[a-z]*$")
     @NotBlank @Size(min = 1, max = 20)
     private String username;
     
